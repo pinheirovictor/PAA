@@ -1,0 +1,43 @@
+============================ RESPOSTA Q1
+
+Projete um algoritmo para calcular ⌊n−−√⌋ utilizando apenas comandos de seleção, repetição e atribuição, e as quatro operações aritméticas básicas.
+
+#include <stdio.h>
+
+float raiz_quadrada(float numero);
+
+int main( int argc, char **argv)
+{  
+    float numero;
+   
+    printf("Entre com um número positivo por favor : ");
+    scanf("%f",&numero);
+   
+    printf("A raiz quadrada de %.1f é %.1f \n",numero,raiz_quadrada(numero));
+
+    return(0);
+}
+
+
+float raiz_quadrada (float numero)
+{
+    int n;
+    float recorre = numero;
+   
+    for (n = 0; n < 10; ++n)
+          recorre = recorre/2 + numero/(2*recorre);
+           
+    return(floor(recorre));    
+}    
+
+
+============================ RESPOSTA Q2
+Projete um algoritmos para encontrar todos os elementos que ocorrem simultaneamente em duas listas ordenadas de números. 
+Por exemplo, para as listas [2,5,5,5] e [2,2,3,5,5,7] a saída seria [2,5,5]. 
+Qual o maior número de comparações que o algoritmo realiza se os tamanhos das duas listas são m e n, respectivamente.
+
+
+http://dontpad.com/vic12PAA
+
+
+

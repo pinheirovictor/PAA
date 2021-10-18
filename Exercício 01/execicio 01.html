@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <!-- MATHJAX 3 (salvo no computador) -->
+        <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+    </head>
+
+    <body>
+        <ul>
+            <li>Questão 01:</li>
+        </ul>
+        <p>Entrada: inteiro positivo (n) <br />Saída: ⌊√n⌋</p>
+
+        <pre><code>
+            raiz ← n
+            for i de 0 até i < 10 do 
+                raiz ← raiz / 2 + n / ( 2 * raiz )
+                i ← i + 1
+            return ⌊raiz⌋ 
+        </pre></code>
+
+        <ul>
+            <li>Questão 02:</li>
+        </ul>
+        <p>Entrada: duas listas ordenadas<br />Saída: lista com os elementos
+            repetidos</p>
+        
+        <pre><code>
+            A[n] ← n
+            B[m] ← m
+
+            while i < A[n].size and j < B[m].size do
+                if(A[i] == B[j])
+                C[i] ← i
+                i  ← i + 1
+                j  ← j + 1
+            return C 
+        </pre></code>
+        
+        <ul>
+            <li>Questão 03: </li>
+        </ul>
+        <ul>
+            <li>\(a^3 * a^5 = a^{3+5} = a^8\) </li>
+            <li>\(3^a * 5^a = (3*5)^a = 15^a\)</li>
+            <li>\(3^a + 5^a = \) (não pode ser simplificada)</li>
+            <li>\(2^{6 \log_{4} (n) + 7} = 2^{6 \log_{4} (n) } + 2^7 = 2^{7 + (6 \log(n)/\log(4))}\)</li>
+            <li>\(n ^{3/\log_{2} (n)} = n^3\log_{n}(2)/\log_{n}(n) = n^{3 * \log_{n}(2)} = 2{^3 * \log_{n}(n) = 2^3 = 8}\) </li>
+            <li>\( \sum_{i=1}^{n} (2*3^i - 4*i) = 2 * \sum_{i=1}^{n} 3^i - 4 * \sum_{i=1}^{n} i = 2n^2 - 2n+3^{n+1}-3\)</li>
+        </ul>
+        <ul>
+            <li>Questão 04:</li>
+        </ul>
+            <ul>
+                <li>Prova por contradição</li>
+            </ul>
+
+                <p>Definição: este metodo de prova é feito assumindo-se como verdade o contrário do que se quer provar, realizar uma prova direta e então chegar a uma contradição.</p>
+                <p>Demostração:</p>
+                <p>"Se \(3n + 2\) é ímpar, então \(n\) é ímpar"</p>
+                <p>p ← "Se \(3n + 2\) é ímpar" </p>
+                <p>q ← "então \(n\) é ímpar"</p>
+
+                <p>Para provarmos por contradição, assumimos que p e ~q são verdadeiras, logo \(3n + 2\) é ímpar e \(n\) não é impar. </p>
+                <p>Como \(n\)  não é ímpar, logo \(n\) é par.</p>
+                <p>Se \(n\) é par então \(3n + 2\) também é par. como  \(n\) é par, pode ser escrito como  \(n = 2k\) onde  \(k\) pertence aos inteiros.</p>
+                <p>isso implica que  \(3n + 2 = 3(2k) + 2 = 6k + 2 = 2(3k+1).\) Como  \(3n + 2 = 2t,\) em que \( t = 3k + 1, 3n + 2\) é par.</p>
+                <p>Como a setença  \(3n + 2\) é par é o mesmo que ~p, pois um inteiro só é par sse não for ímpar. Como ambas p e ~q são verdadeiras, temos uma contradição, logo  \(3n + 2\) é ímpar, então \(n\) é ímpar.</p>
+
+                <p>Também se pode demonstrar por contradição que p-> q é verdadeira, assumindo que p e~q são verdadeiras e mostrando que q deve ser também verdadeira. Isso implica
+                    que ~q e q são ambas verdadeiras, logo uma contradição.
+                </p>
+            <ul>
+                <li>Prova por indução</li>
+            </ul>
+           
+            <p>Definição: A indução matemática pode ser usada para se demonstrar proposições que afirmam que \(P(n)\) é verdade para todos os numeros inteiros positivos, onde \(P(n)\) é uma função proposicional.</p>
+            <p> indução é divida em duas partes, uma parte chama passo base, onde se motrsa que \(P(1)\) é verdade e o passo indutivo, que se mostra para todos interios, onde se \(P(k)\) é verdade então \(P(k+1)\) também é verdade</p>
+            <p>Demonstração:</p>
+            <p>\(n < 2^n\) para todos os inteiros positivos \(n\).</p>
+            <p>Passo Base: \(P(1) = 1< 2^1 = 2\), logo \(P(1)\) é verdade!</p>
+            <p>Passo indutivo: assumimos que \(P(k)\) é verdade para um inteiro k positivo, ou seja a hipótse de indução é \(k < 2^k\). </p>
+            <p>Se \(P(k)\) é verdade, logo assumimos que \(P(k + 1)\) é verdade.</p>
+            <p>Logo \(k + 1 < 2^{k+1}\) é verdade. Precisamos mostrar que se \(k < 2^k\) então \(k + 1 < 2^{k+1}\) </p>
+            <p>Se somarmos 1 aos dois lados de \(k < 2^k\), temos que \(1 <= 2^k\), isso nos diz que:</p>
+            <p>\(k + 1 < 2^k + 1 <= 2^k + 2^k = 2 * 2^k = 2^{k+1}\)</p>
+            <p>Isso nos diz que \(P(k + 1)\) é verdade, ou seja \(k + 1 < 2^{k+1}\), com base na H.I. de que \(P(k)\) seja verdade.</p>
+            <p>Logo concluí-se que \(n < 2^n\) é verdade para todos os inteiros positivos \(n\).</p>
+
+
+
+
+
+
+
+
+        </body>
+
+    </html>

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <!-- MATHJAX 3 (salvo no computador) -->
+        <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+    </head>
+
+    <body>
+        <ul>
+            <li>Questão 01:</li>
+        </ul>
+
+        <p>A)- RESPOSTA</p>
+        <p> <strong>Bubble_sort:</strong> utilizando o procedimento
+            "razão dobrando", para descobirir o grau o grau do polinômio que
+            fornece o tempo de execução em função do
+            tamanho da entrada \(n\), se obteve o seguinte resultado convergindo
+            para 4:</p>
+
+            <p>OBS: Ver imagem no final da resolução do execicio</p>
+
+        <p>Logo, como o algoritmo possui tempo de execução polinomial,
+            \(Θn^2\),
+            o grau do polinômio é 2 a partir dos valores obitidos no
+            procedimento citado, os valores foram convergindo para \(4 = 2^2\)
+        </p>
+
+        <p>Outro procedimento:</p>
+        <p>As seguintes imagens ilustram o outro procedimento feito
+            para se descobrir o grau do polinômio. Primeiro o gráfico com os
+            valores
+            das entradas e os tempos coletados de acordo com cada entrada,
+            depois
+            foi realizado a regressão linear para se encontrar em que momento os
+            valores do gráfico convergiram para uma reta.
+            Após isso o cálculo do Slope e do intervalo de confiança.</p>
+
+            <p>OBS: Ver imagem dos gráficos no final da resolução do execicio</p>
+
+        <p>slope: [2.20221841] e slope conf interval: [1.83704863 2.56738818]</p>
+        <p>Logo se cofirma mais uma vez, que o grau do polinômio possui valor 2.</p>
+        <br>
+        <br>
+
+        <p> <strong>Merge_sort:</strong> utilizando o procedimento
+            "razão dobrando", para descobirir o grau o grau do polinômio que
+            fornece o tempo de execução em função do
+            tamanho da entrada \(n\), se obteve o seguinte resultado convergindo
+            para 2:</p>
+
+        <p>OBS: Ver imagem no final da resolução do execicio</p>
+
+        <p>Como o algoritimo possui complexidade \(Θ(nlogn)\), e
+            o mesmo é muito rápido em sua execução foram
+            utilizados valores muito grandes para as entradas no
+            procedimento razao dobrando. Com isso o grau do polinômio é 1
+            a partir dos valores obitidos no procedimento citado,
+            os valores foram convergindo para \(2 = 2^1\)</p>
+
+        <p>Outro procedimento:</p>
+        <p>As seguintes imagens ilustram o outro procedimento feito
+            para se descobrir o grau do polinômio. Primeiro o gráfico com os
+            valores
+            das entradas e os tempos coletados de acordo com cada entrada,
+            depois
+            foi realizado a regressão linear para se encontrar em que momento os
+            valores do gráfico convergiram para uma reta.
+            Após isso o cálculo do Slope e do intervalo de confiança.</p>
+
+            <p>OBS: Ver imagem dos gráficos no final da resolução do execicio</p>
+
+        <p>slope: [1.14267577] e slope conf interval: [1.04305946 1.24229208]</p>
+        <p>Logo se cofirma mais uma vez, que o grau do polinômio possui valor 1.</p>
+        <p>B)- RESPOSTA</p>
+
+        <p> <strong>Bubble_sort:</strong></p>
+        <p>Assumimos que o tempo de execução do algoritimo é \(T(n)= c*n^2\),
+            para encontrar a costante c, utilizamos o ultimo ponto do gráfico
+            em relação com a entrada, ou seja \(n\) vale 51200 e o tempo vale
+            236,31.</p>
+        <p>\(T(n) = c*n^2 = 236,31 = c * 51200^2 => c = 9,14*10^{-8} \)</p>
+        <p>\(T(n) = 9,14*10^{-8} * n^2\)</p>
+
+        <p>Testando para o caso da entrada de tamanho 51200, se obteve o
+            resultado: \(T(51200) = 236,31\) que é
+            próximo ao tempo gasto pelo computador durante a execução, que foi
+            de \(236.31884241104126\).</p>
+
+        <p>Testando para a entrada de tamaho 80000, se obeteve o seguinte
+            resultado: \(T(80000) = 584.96\)
+             que é próximo ao tempo gasto pelo computador durante a
+            execução,
+            que foi de \(580.7523713111877\).</p>
+        <br>
+        <br>
+
+        <p> <strong>Merge_sort:</strong></p>
+        <p>Assumimos que o tempo de execução do algoritimo é \(T(n)= c*n\),
+            para encontrar a costante c, utilizamos o ultimo ponto do gráfico
+            em relação com a entrada, ou seja \(n\) vale 3276800 e o tempo vale
+            26,77.</p>
+        <p>\(T(n) = c*n \) </p>
+        <p>\(26,77 = c * 3276800 => c = 0,00000816955\)</p>
+        <p>\(T(n) = 0,00000816955 * n\)</p>
+
+        <p>Testando para o caso da entrada de tamanho 3276800, se obteve o
+            resultado: \(T(51200) = 26.54208\) que é
+            próximo ao tempo gasto pelo computador durante a execução, que foi
+            de \(26.77403974533081\).</p>
+
+
+        <p>Testando para a entrada de tamanho 80000, se obeteve o seguinte
+            resultado: \(T(80000) = 0.653564\)
+             que é próximo ao tempo gasto pelo computador durante a
+            execução,
+            que foi de \(0.60915608406066895\).</p>
+
+
+        <p>C)- RESPOSTA</p>
+        <p> <strong>Algoritimo Recursivo:</strong></p>
+        <p>Os valores de entrada iniciando de n=1 até n=12 deram valores igaus a 0,
+            então assumimos os valores de entada de [24, 25, 26, 27, 28, 29, 30]
+            com os respectivos tempos de [1.5196905136108398, 2.987525224685669,
+            5.919523239135742, 12.441267251968384, 24.833341121673584,
+            47.445162534713745, 94.58348202705383] </p>
+
+        <p>A imagem a seguir, ilustra o gráfico das entradas em função dos
+            tempos:</p>
+
+            <p>OBS: Ver imagem dos gráficos no final da resolução do execicio</p>
+
+        <p>Por meio de regressão linear, para encontrar a inclinação da reta,
+            a prtir de um certo ponto, aplicamos log no eixo y dos tempos, pois
+            o algoritimo é
+            exponencial do tipo \(a * n * log(b) = a * log(b)\) da forma básica
+            onde \(b^a > 1\)
+        </p>
+
+        <p>A imagem a seguir, lustra o gráfico das entradas em função dos
+            tempos,
+            com log aplocado no eixo y:</p>
+
+            <p>OBS: Ver imagem dos gráficos no final da resolução do execicio</p>
+
+        <p>O valor do slope: [0.99737208] e o slope conf interval: [0.98054127
+            1.0142029 ], com isso
+            encontramos o grau do exponete da expressão para a previsão dos
+            tempos de execução em
+            função da entrada \(n\). </p>
+        <p>Olhando para a forma básica \(b^{an}\) temos que: \(T(n) = c *
+            2^{1*n}\)</p>
+        <p>Subisituindo \(T(n)\) por o maior tempo de execução e \(n\) por a
+            maior entrada, para encontrar
+            o valor da constante c, temos que: \(94,58 = c * 2^{1*30} => c=
+            8,80*10^{-8}\), Logo
+            a expressão para previsão do tempo de execução em função do valor da
+            variável \(n\) de entrada é \(T(n) = 8,80*10^{-8} * 2^n \). </p>
+
+        <p>Testando para a entrada de tamaho 20, se obeteve o seguinte
+            resultado: \(T(20) = 2.955625\)
+             que é próximo ao tempo gasto pelo computador durante a
+            execução,
+            que foi de \(3.571122407913208\).</p>
+
+            <p>Testando para a entrada de tamaho 31, se obeteve o seguinte
+                resultado: \(T(31) = 189.16 \)
+                que é próximo ao tempo gasto pelo computador durante a
+                execução,
+                que foi de \(188.15358686447143555\).</p>
+
+    </body>
+
+</html>

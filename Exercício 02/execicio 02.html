@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <!-- MATHJAX 3 (salvo no computador) -->
+        <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+    </head>
+
+    <body>
+        <ul>
+            <li>Questão 01:</li>
+        </ul>
+        <p>A) \(f(n) = n^2 + 3n^2* \log n\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \(n^2 => c = 1, b^a = 1, d = 2,  e = 0 \)</p>
+        <p>2º termo = \(3n^2* \log n => c=3, b^a = 1, d=2, e=1\)</p>
+        <p>Logo, \(f(n) = 3n^2* \log n => n^2* \log n \) por ter o maior valor de \(e\).</p>
+        <p>\(f(n) ∈ Θ(n^2* \log n) => \) que é do tipo polinomial. \( (n^{Θ(1)}) \).</p>
+
+        
+        <br>
+        <p>B) \(f(n) = 5n^3 - 17n + 4\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \( 5n^3 => c = 5, b^a = 1, d = 3, e = 0\)</p>
+        <p>2º termo = \( 17n => c = 17, b^a = 1, d = 1, e = 0 \)</p>
+        <p>3º termo = \( 4 \)</p>
+        <p>Logo, \(f(n) =  5n^3 =>  n^3 \) por ter o maior valor de \(d\).</p>
+        <p>\(f(n)  ∈ Θ(n^3) => \) que é do tipo polinomial. \(  (n^{Θ(1)}) \).</p>
+
+
+        <br>
+        <p>C) \(f(n) = 7^{3 * \log_{2} n}\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \( 7^{3 * \log_{2} n} => c=7, b^a =3 * \log_{2} n, d = 1, e = 8\)</p>
+        <p>Logo, \(f(n) =  7^{3 * \log_{2} n}\) </p>
+        <p>\( f(n) ∈ Θ(7^{3 * \log_{2} n}) => Θ(2^{Θn}) =>\) que é do tipo exponencial. \( (2^{Θ(n)}) \).</p>
+        
+
+        <br>
+        <p>D) \(f(n) = \) { \( 1 \) se \(n\) é impar, \(2\) se \(n\) é par}</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \(1\) ou \(2\) </p>
+        <p>Logo, \( f(n)∈ Θ(1) => \) como \(f(n)\) só assume os valores 1 e 2, que é do tipo constante. \((Θ(1))\).</p>
+        
+
+        <br>
+        <p>E) \(f(n) = 2* 2^n * n^2 * \log_{2} n - 7n^8 + 7* 3^n / n^2\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \( 2* 2^n * n^2 * \log_{2} n => c = 2, b^a = 2, d = 2, e = 1 \)</p>
+        <p>2º termo = \( 7n^8 => c = 7, b^a = 1, d = 8, e = 0\)</p>
+        <p>3º termo = \( 7* 3^n / n^2 => c = 7, b^a = 3,  d = -2, e=0\)</p>
+        <p>Logo, \( f(n) = 7* 3^n / n^2 \) por ter o maior valor de \(b^a\)</p>
+        <p>\( f(n) ∈ Θ( 3^n / n^2) => \) que é do tipo exponencial decrescente.  </p>
+        
+        <br>
+        <p>F) \(f(n) = 100n^{100} + 3^{4n} + \log^1000 (n) + 4^{3n}\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \( 100n^{100} => c=100, b^a = 1, d=100, e=0\)</p>
+        <p>2º termo = \( 3^{4n} => c=3, b^a=3^4, d=0, e=0\)</p>
+        <p>3º termo = \( \log^1000 (n) => c=1, b^a=1, d=0, e=1000\)</p>
+        <p>4º termo = \( 4^{3n} => c=4, b^a=4^3, d=0, e=0\)</p>
+        <p>Logo, \( f(n) = 3^{4n} \), por ter o maior valor de \(b^a\).</p>
+        <p>\(f(n) ∈ Θ(3^{4n}) => \) que é do tipo exponencial.  \(  (2^{Θ(n)}) \).</p>
+        
+        <br>
+        <p>G) \(f(n) = 6n^4/\log^3 n + 8n^{100} * 2^{-5n} + 17\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \( 6n^4/\log^3 n => c=6, b^a=1, d=4, e=3\)</p>
+        <p>2º termo = \( 8n^{100} * 2^{-5n} => c=8, b^a =2^{-5n}, d=100, e=0\)</p>
+        <p>3º termo = \(17\)</p>
+        <p>Logo, \(f(n) = 6n^4/\log^3 n \), por ter o maior valor de \(b^a\).</p>
+        <p>\(f(n) ∈ Θ(n^4/\log^3 n) => \) que é do tipo polinomial. \(  (n^{Θ(1)}) \).</p>
+        
+        <br>
+        <p>H) \(f(n) = 1/n^2 + 5\log(n)/n \)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \(  1/n^2 => c1, b^a=1, d=-2, e=0\)</p>
+        <p>2º termo = \(  5\log(n)/n => c=5, b^a= d=0, e=1\)</p>
+        <p>Logo, \(f(n) = 5\log(n)/n \), por ter o maior valor de \(e\).</p>
+        <p>\(f(n) ∈ Θ(5\log(n)/n) => \) que é do tipo logarítmica. \((log^{Θ(1)}(n)\)</p>
+        
+        <br>
+        <p>I) \(f(n) = 7 \sqrt[5]{n} + 6 \sqrt[3]{n} \)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>1º termo = \( 7 \sqrt[5]{n} \)</p>
+        <p>2º termo = \( 6 \sqrt[3]{n}\)</p>
+        <p>\(f(n)\) não pertence a nenhuma das classificações.</p>
+
+        <br>
+        <br>
+        <ul>
+            <li>Questão 02:</li>
+        </ul>
+        <p>A) Constante multiplicativa: \( a > 0 \), temos que \(a * f(n) ∈ Θ(f(n))\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>\(2 * b^{4n} ∈ Θ(b^{4n}) => a = 2, f(n) = (b^{4n})\)</p>
+        <br>
+
+
+        <p>B) Adição: Se \(f1(n) ∈ Θ(g1(n))\) e \(f2(n) ∈ Θ(g2(n))\), então \(f1(n) + f2(n) ∈ Θ(g1(n) + g2(n))\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>\(5^n + n ∈ Θ(2^n)\) e \( 9^{2n} ∈ Θ(2^n), \) logo \((5^n + n) + (9^{2n}) ∈ Θ(2^n + 2^n) = Θ(2^n) \)</p>
+        <br>
+
+
+        <p>C) Produto: Se \(f1(n) ∈ Θ(g1(n))\) e \(f2(n) ∈ Θ(g2(n))\), então \(f1(n) * f2(n)∈ Θ(g1(n) * g2(n))\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>\(5n^3 = n  ∈ Θ(n^3)\) e \(\log (7n^3 = n) ∈ Θ(\log n)\), então \((5n^3 = n) * (\log (7n^3 = n)) ∈ Θ(n^3 * \log n)\) </p>
+        <br>
+
+        
+        <p>D) Transitividade: Se \(f(n) ∈ Θ(g(n))\) e \(g(n) ∈ Θ(h(n))\), então \(f(n) ∈ Θ(h(n))\)</p>
+        <p><strong>Resposta:</strong> </p>
+        <p>\(8n^3 + n ∈ Θ(8n^3)\) e \(8n^3 ∈ Θ(n^3)\), então \(8n^3 + n ∈ Θ(n^3)\)</p>
+        <br>
+
+
+
+    </body>
+
+</html>

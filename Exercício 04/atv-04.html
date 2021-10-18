@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body>
+
+<h1>Questão 01</h1>
+    <h3>Item A</h3>
+        <p><strong>Medida de progresso:</strong> \({L[1] < L[i] < L[j]}\) involução por elementos fora de ordem, ou seja elementos menores que pivô depois da posição no mesmo na lista. Exemplo: \([3, 1, 5, 10, 2]\), os elementos \(1\) e \(2\) estão desorganizados em relação ao pivô. </p>
+    <h3>Item B</h3>
+            <p><strong>Como estabelecer o invariante do loop:</strong> O invariante do loop: \(i\) e \(j\), são verdadeiros, pois sempre o pivô será o primeiro elemento da lista, de modo que exceto em casos especiais,
+                 haverá sempre elementos menores que o pivô em posições a frente da lista, que se necessitará de reorganização. 
+                    Também, ...  </p>
+    <h3>Item C</h3>
+            <p><strong>Qual o código do loop?: </strong> O código do loop é necessário fazer progresso e manter o invariante, neste caso o código é:
+                 em cada iteração, avance \(i\) se \(L[i] <= L[1]\), avance \(j\) se \(L[j] > L[1]\), se não troque os
+                valores de \(L[i]\) com \(L[j]\) e avance \(i\) e \(j\) até quando \(j < i\).</p>
+    <h3>Item D</h3>
+            <p><strong>Garantia de saída:</strong> Como \(i\) vai do início da lista até o fim, e \(j\) vai do fim ao início, e ambos são comparados ao pivô, em algum certo momento, 
+                de acordo com a medida de progresso já definida e a veracidade do invariante, ambos os ínidices
+            deverão passar por todos os elementos da lista, compará-los e reorganizá-los, de modo que ao final do loop, onde \(j < 1\), teremos que 
+        \(j = i - 1\).</p>
+    <h3>Item E</h3>
+            <p><strong>Qual o código pós-loop:</strong> o código pós-loop é, a finalização do algoritmo, é justamente a outra troca 
+                a ser realizada entres os elementos da lista das posições \(L[j]\) com \(L[i]\), onde a primeira troca é  código do loop,
+                 que troca os elementos da posição \(L[i]\) com \(L[j]\). as Pós-condições são satisfeitas, pós as condições de \(L[i]\ <= pivo\) e 
+                 \(L[j] > pivo\) são satisfeitas, de modo que a pós-condição apenas atende ao ultimo caso, onde ocorre a 
+                troca de \(L[i]\) com \(L[j]\) e incrementa os índices \(i,j\).</p>
+    <h3>Item F</h3>
+            <p><strong>Pseudocódigo: </strong></p>
+            <pre><code>
+                algoritmo particao(L[1...n]):
+                    pivo ← L[1]
+                    i ← 2
+                    j ← n
+                    loop: 
+                        se L[i] <= pivo entao
+                            i = i + 1
+                        senao se L[j] > pivo entao
+                            j = j + 1
+                        senao 
+                            trocar L[i] com l[j]
+                            i = i +1
+                            j = j + 1
+                        se (j < i) entao
+                            sair do loop
+                    trocar L[j] com L[i]
+                    retorne L
+                </pre></code>
+    <h3>Item G</h3>
+            <p><strong>Adaptações:</strong> Para apenas um elemento na lista, basta fazer uma condição inicial para retornar a propria lista, se a mesma possuir apenas um elemento.
+            Para o caso de nenhum elemnto maior que \(i\) pivô, basta apenas tratar os dois casos de maneira correta, oe elementos menores que o pivo e os maiores, no caso apenas o indice \(i\)
+        iria passar pelos elementos de maneira aprganizar a lista em relação ao índice \(j\) que iria apenas ser comparado e trocado com os elementos menores que o pivô para serem reorganizados.
+        Para o caso de todos os elementos exceto o pivô serem maiores, apenas ser tratado o caso 1, como já feito, ou seja a comparação dos elementos em reação ao pivô e a comparação dos elementos consigos mesmos 
+        para a reorganização da lista.
+    </p>
+    <h3>Item H</h3>
+            <p><strong>Complexidade:</strong>A Complexidade deste algoritmo, é dada a partir da contação de intruções, a aproximação tetha de cada instrução e a soma das complexodades, sempre observando 
+            o polinomio com grau de expoente maior. Neste caso temos: \(n^2\) \(n\) vezes, pois no pior caso, todos os elementos da lista serão acessados, e reorganizados em relação ao pivô.</p>
+<h1>Questão 02</h1>
+    <p><strong>Complexidade: </strong></p>
+    <p>\((\sum_{i=1}^{n} f(i) + \sum_{i=1}^{n} \sum_{j = i + 1}^{n} g(i)) + \sum_{i=1}^{n} h(i)\)</p>
+
+    <p>Distribuindo os somatórios:</p>
+    <p>\(\sum_{i=1}^{n} f(i) = 1+2+3+4+5+6+...+n\)</p>
+    <p>\(S= n+ n-1+ n-2 + ... 1\)</p>
+    <p>\(2S= (n+1) + (n+1)+... +(n+1)\)</p>
+    <p>\(2S = n(n+1) => S= n(n+1)/2\)</p>
+    <p>\(S=n^2+n/2 ∈ Θ(n^2)\)</p>
+    
+    <br>
+    <br>
+    <p>\(\sum_{i=1}^{n} \sum_{j = i + 1}^{n} g(i) = \sum_{i=1}^{n}  \sum_{j = 1}^{i} g(i)\)</p>
+    <p>\(\sum_{i=1}^{n} \sum_{j = 1}^{i} \log_{} n = \sum_{i=1}^{n} i * \log_{} n = n^2 * \log_{} n ∈ Θ(n^2)\)</p>
+    <p>\(\sum_{i=1}^{n} n^2 = n * n^2 = n^3 ∈ Θ(n^3)\)</p>
+    <p>\(Θ(n^2) + Θ(n^2) + Θ(n^3) ∈ Θ(2n^2 + n^3) ∈ Θ(n^3)\)</p>
+
+
+
+
+
+</body>
+</html>
