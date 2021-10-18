@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+    <!-- MATHJAX 3 (através da CDN) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MATHJAX 3 (salvo no computador) -->
+    <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+
+<body>
+
+    <h1>Questão 01</h1>
+    <h3>Item A</h3>
+    
+    <p>Pseudocódigo</p>
+    
+    <pre><code>
+        mochila(c, p, v, n)
+        
+        Entrada: uma mochila que suporta C kg, e temos um conjunto com n itens 
+        onde cada item i tem peso p[i] e valor v[i].
+        
+        Saída: subconjunto S de itens de valor máximo e que cabe na mochila.
+
+            bits ← []
+            for i de 1 até n faça:
+                bits[i] ← 0
+            i ← 0
+            maior ← 0
+            S ← []
+
+            enquanto (i < (2^n - 1)) faça:
+                bits ← proxima_sequencia_bits(bits)
+                soma_de_pesos ← 0
+                soma_de_valores ← 0
+                aux ← []
+
+                for k de 1 até n faça:
+                    se (bits[k] == 1) então:
+                        soma_de_pesos ← soma_de_pesos + 1
+                        soma_de_valores ← soma_de_valores + 1
+                        aux.append(k)
+                se (c >= soma_de_pesos) então:
+                    se maior < soma_de_valores então:
+                        maior ← soma_de_valores
+                        S ←  aux.copy()
+            retorne S 
+            
+
+    </pre></code>
+
+    <h3>Item B</h3>
+
+    <p>Complexidade do algoritmo</p> 
+        
+    <p>Temos que: \(O(n) + O(2^n) + O(n)\) = \(O(n) + 2*O(n*2^n) = O(n*2^n)\). </p>
+   
+    <p>Logo a Complexidade é: \(O(n * 2^n)\)</p>
+
+</body>
+
+</html>

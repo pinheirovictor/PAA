@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+        <!-- MATHJAX 3 (através da CDN) -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <!-- MATHJAX 3 (salvo no computador) -->
+        <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+    </head>
+    <body>
+
+        <h1>Questão 01</h1>
+        <h3>Item A</h3>
+        <p>Algoritmo com complexidade \(O(n+m)\)</p>
+        <pre><code>
+
+    def fusao(B[1...n], L[1...m]):
+        U ← UnionFind()                                     // operação de criação O(1)
+        
+        for i de 1 até n do                                 // O(n)  
+            U.add(i)                                        // O(1)
+        
+        for de j de 1 até m do                              // O(m)
+            (t, c1, c2) ← L[j]
+            
+            se (t == 'F') então
+                U.union(c1, c2)                             // união O(1)
+
+            se nao se (t == 'C') então
+                se (U.connected(c1, c2)) entao              // conectados O(1)
+                    imprima "S"
+                se nao
+                    imprima "N"
+    </pre></code>
+        <h3>Item B</h3>
+
+        <p>Algoritmo Union-Find, é uma implementação tão eficiente, que em
+            maioria dos casos, as tarefas
+            são executadas com complexidade \(O(1)\).</p>
+
+        <p>Neste Algoritmo de Fusões, a complexidade fica \(O(n + m)\), pois são
+            as \(n\) e \(m\) operações a
+            serem realizadas em função \(n\) e \(m\) tamanhos das Listas
+            recebidas como entrada.</p>
+        <p>São utilizadas operações de união que gasta tempo \(O(1)\),
+            conectados que gasta tempo \(O(n)\) para os elementos contidos na
+            lista \(L\).</p>
+
+        <p>As outras operações utilizadas, são realizadas em tempo constante, ou
+            seja \(O(1)\).</p>
+    </body>
+</html>

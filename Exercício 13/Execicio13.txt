@@ -1,0 +1,41 @@
+Respostas:
+
+Questão 1
+
+Item a)
+
+Certificado:
+
+O certificado é o conjunto de vértices \(C\) que fazem parte do conjunto independente com pelo menos \(k\) vértices.
+Verificador:
+
+verificar se elementos do conjunto de vértices \(C\), são elementos do grafo \(G\).
+verificar se o tamanho de \(C\) é pelo menos k.
+para toda aresta \((u,v) \in G\), deve ser verificado se o vértice \(u\) ou o vértice \(v\) pertence a \(C\).
+Cada verificação precisamos percorrer o grafo \(G\), desse forma cada verificação pode ser feita em tempo polinomial sobre o tamanho de \(G\).
+
+ 
+
+Item b)
+
+A transformação é feita em tempo polinomial pois só é preciso construir o grafo \(G\). E o número de vértices do grafo é igual a quantidade de literais da formula \(\phi \). A quantidade de arestas definida em cada clausula é no máximo a quantidade de literais na formula \(\phi\), e a quantidade de arestas que ligam os literais verdadeiros a sua negação é menor ou igual ao numero de literais de \(\phi\) ao quadrado.
+
+Dessa forma temos que para transformar formula \(3-SAT \phi \) em um grafo \(G\) é feito de forma polinomial sobre o tamanho de \(\phi\).
+
+ 
+
+Item c)
+
+=>
+
+Como \(G\) tem um conjunto independente \(C\). Seja \(v \in C\) e um literal pertecente a \(\phi\) associado a \(v\). Seja o literal na forma \(x\)  se o literal é verdadeiro, e  \(\bar{x}\) se o literal for falso.
+
+Como \(C\) é um conjunto independente, não tem problema de ter valores contraditórios para um literal, ja que vértices associados a literais negados possuem uma aresta entre si em \(G\).
+
+Como todos os vértices associados a literais de uma mesma cláusula estão ligados entre si, \(C\) não possui mais de um vértice associado a mesma cláusula.
+
+Como o tamanho de \(C\) é igual a \(m\) temos que a valoração definida satisfaz a todas as cláusula de \(\phi\).
+
+<=
+
+Para cada clausula de \(\phi\) podemos considerar apenas um literal verdadeiro nesta valoração. Seja \(C\) o conjunto de vértices pertencentes a \(G\) associados a estes lietrais. Como \(C\) contém apenas um vértices associado em cada cláusula, temos que o tamanho de \(C\) é igual a \(m\). E para cada par de vértices em \(C\), não existe arestas entre eles em \(G\), logo \(C\) é um conjunto independente de \(G\), de tamanho \(m\).

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+    <!-- MATHJAX 3 (através da CDN) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MATHJAX 3 (salvo no computador) -->
+    <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+
+<body>
+
+    <h1>Questão 01</h1>
+    <h3>Item A</h3>
+    <p>Mostre que a sentença é verdadeira:</p>
+    <p>Como \(u1 .. uk-1\) e \(v1... vk-1\) são valores iguais da mesma solução, o fim da solução
+        também é igual, no caso \(un\) e \(vl\), logo basta trocar \(uk..un-1 \) por \(vk..vl-1\), logo
+        a solução continua viável.</p>
+    <p>Como \(uk\) pertence a solução ótima, é viável constuir uma solução gulosa, trocando \(uk\) 
+        elemtnos de \(O\), sem que pior a solição ótima.
+    </p>
+
+    <h3>Item B</h3>
+    <p>Forneça o pseudocódigo e a complexidade do algoritmo guloso</p>
+
+    <p>Pseudocódigo</p>  
+    <pre><code>
+        paradas_em_hoteis(D, x):
+            distancia ← 0
+            lista ← set()
+            for de i indo de 0 até tamanho(x) - 1
+                se x[i] - distancia < D então
+                    se x[i+1] - distancia > D então
+                        lista ← i
+                        distancia x[i]
+                    se não se ((x[i] - distancia) == D) então
+                        lista ← i
+                        distancia ←  x[i]
+            retorne lista
+    </code></pre>
+    
+    <p>Complexidade</p>
+
+    <p>Como o loop vai de 0 o tamanho de x - 1, é \(Θ(n)\) e 
+        o restante das operações gastam tempo constante, \(Θ(1)\), logo
+    o algoritmo possui tempo linear \(Θ(n)\) </p>
+
+</body>
+
+</html>

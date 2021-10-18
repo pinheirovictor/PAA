@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+    <!-- MATHJAX 3 (através da CDN) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MATHJAX 3 (salvo no computador) -->
+    <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+
+<body>
+
+    <h1>Questão 01</h1>
+    <h3>Item A</h3>
+    <p>Para o problema do elemento Majoritário, o algoritmo de divisão e conquista 
+        que fornece o elemento majoritário sempre que a lista \(L\) possui um majoritário.
+         Quando \(L\) não possui majoritário, o algoritmo pode retornar qualquer 
+         elemento. Ou seja, para confirmar se o elemento retornado é de fato 
+         majoritário precisaríamos ainda percorrer \(L\) para contar o número de 
+         ocorrências do elemento retornado.</p>
+
+    <p>Pseudocódigo</p>
+
+    <p>Entrada: Uma lista \(L[1..n]\) e um contador inteiro iniciando de \(0\)</p>
+    <p>Saída: Elemento Majoritário e quantidade desse elemento.</p>
+    
+    <pre><code>
+        majoritario(L[1...n], contador)
+            <b>se</b> (n == 1) <b>então</b>
+                retorne (L, contador + 1)
+            meio ← ⌊n/2⌋
+            (esquerdo, contadorE) ← majoritario(L[1..meio], contador)
+            (direito, contadorD) ← majoritario(L[meio+1..n], contador)
+
+            <b>se</b> (esquerdo == Ø <b>and</b> direito == Ø) <b>então</b>
+                retorne (Ø, Ø)
+            <b>se não se</b> (esquerdo != Ø <b>and</b> direito == Ø) <b>então</b>
+                retorne (esquerdo, contadorE)
+            <b>se não se</b> (esquerdo == Ø <b>and</b> direito != Ø) <b>então</b>
+                retorne (direito, contadorD)
+            <b>se não se</b> (esquerdo == direito) <b>então</b>
+                retorne (direito, contadorE + contadorD)
+            <b>se não então</b>
+                <b>se</b> (contadorE > contadorD) <b>então</b>
+                    retorne (esquerdo, contadorE - 1)
+                <b>se não se</b> (contadorD > contadorE) <b>então</b>
+                    retorne (direito, contadorD - 1)
+                <b>se não então</b>
+                    retorne (Ø, 0)
+    </code></pre>
+
+    <h3>Item B</h3>
+
+    <p>Explique como a etapa de conquista foi resolvida</p>
+
+   <p>O problema é dividio ao meio, em duas partes esquerda e direita, 
+       onde cada parte recebe a metade da lista para resolver o problema.</p>
+    <p>As partes são combinadas a partir de verificações, para se resolver o 
+        problema a partie do resultado de cada parte do problema.</p>
+
+    <h3>Item C</h3>
+
+    <p>Complexidade:</p>
+    <p>\(T(n) = 2 * T(n/2) + θ(n)\)</p>
+    <p>Logo temos que: \(a=2, b=2, d=0, e=0\)</p>
+    <p>Como o \(\log _{b} a = 1 > d = 0\), temos que \(T(n) ∈ θ(n^{\log _{b} a}) = θ(n)\)</p>
+    <p>Logo o algoritmo possui tempo linear \( θ(n)\)</p>
+
+</body>
+
+</html>

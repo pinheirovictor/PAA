@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+    <!-- MATHJAX 3 (através da CDN) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MATHJAX 3 (salvo no computador) -->
+    <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+
+<body>
+
+    <h1>Questão 01</h1>
+    <h3>Item A</h3>
+    <p>Para o problema da mochila, o algoritmo de busca exaustiva compara todas as possibilidades de preenchimento da
+        mochila que não ultrapassem o peso máximo estipulado. Durante este teste, o algoritmo guarda numa variável a
+        maior utilidade conseguida e ao final de todas as comparações, o resultado do algoritmo está armazenado nesta
+        variável.</p>
+
+    <p>Pseudocódigo</p>
+    
+    <pre><code>
+        mochila(p, u, n, m)
+            se n == 0 então
+                return 0
+            senão 
+                A = mochila(p, u, n-1, m)
+                    se p[n] > m então
+                        return A
+                        senão 
+                            B = u[n] + mochila(p, u, n-1, m-p[n])
+                                return max(A, B)
+
+    </pre></code>
+
+    <h3>Item B</h3>
+
+    <p>Complexidade</p>
+    <p>Se denotarmos por \(T(n)\) o consumo de tempo no pior caso podemos dizer que:</p>
+    <p>\(T(0) = 1\)</p>
+    <p>\(T(n) = T(n – 1) + T(n – 1) + Θ(1)\)</p>
+
+    <p>A solução desta recorrência tem a forma \(2^0 + 2^1 + ... + 2^n\). Assim \(T(n) = Θ(2^n)\)</p>
+    <p>Este algoritmo é ineficiente pelo fato de que ele refaz várias vezes a solução de
+        vários subproblemas já calculados</p>
+    
+
+</body>
+
+</html>

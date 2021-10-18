@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body>
+
+<h1>Questão 01</h1>
+    <h3>Item A</h3>
+    <pre><code>
+        if (n == 0)      //caso base
+            return 1
+        if (n == 1)      //caso base
+            return b       
+    </pre></code>
+    <p>Os valores de \(n\) a serem considerados no caso base são \(n=0\) onde se deve retornar sem chamadas recursivas o resultado \(1\), 
+        pois todo \(b\) elevado a \(0\) resulta em \(1\) e \(n=1\) que deve ser retornado também sem chamadas recursivas, o valor de \(b\), 
+        pois qualquer \(b\) elevado a um expoente de valor \(1\), resulta  nele mesmo, ou seja o próprio valor de \(b\).
+    </p>
+   
+    <h3>Item B</h3>
+    <p>Sim, sub-instâncias \((b,⌊n/2⌋)\) e  \((b,⌈n/2⌉)\) 
+        são menores que a instância original, e satisfazem as pré-condições, pois o piso e o teto da 
+        divisão de \(n\) por \(2\), são valores menores que a instância original, onde a combinação dos mesmos
+    se tornam o resultado esperado da instância original.</p>
+
+    <h3>Item C</h3>
+    <pre><code>
+        I1 ← potencia(b,⌊n/2⌋)
+        I2 ← potencia(b,⌈n/2⌉)
+        return I1 * I2
+    </pre></code>
+
+    <p>As sub-soluções são combinadas, com a multiplicação das 
+        mesmas nos casos de \((b,⌊n/2⌋)\) e \( (b,⌈n/2⌉)\) para se obter a solução da instância 
+    original. </p>
+
+    <h3>Item D</h3>
+    <p><strong>Pseudocódigo: </strong></p>
+    <pre><code>
+        Pré-condições: recebe como entrada dois inteiros b e n, 
+                       onde n≥0 e não temos b e n nulos simultaneamente.
+        Pós-condições: retorna o valor b^n.
+        
+        algoritmo potencia(b, n)
+            if (n == 0):      //caso base
+                return 1     //solução direta
+            if (n == 1):      //caso base
+                return b     //solução direta
+
+            I1 ← potencia(b,⌊n/2⌋)    //sub-solução 1
+            I2 ← potencia(b,⌈n/2⌉)    //sub-solução 1
+            return I1 * I2
+    </pre></code>
+
+    <h3>Item E</h3>
+    <p>Este algoritmo tem a complexidade igual ao algoritmo força bruta, ou seja \(Θ(n)\), 
+        pois ele tem duas chamadas \(T(n/2)\) e mais duas verificações, de modo temos que:</p>
+    <p>\(T(n) = 2*T(n/2) + 2\)</p>
+    <p>\(T(n) = 2*T(n/2) + Θ(1)\)</p>
+    <p>\(T(n) = a*T(n/b) + f(n)\)</p>
+    <p>\(f(n) = Θ(n^d \log_{} ^e n)\)</p>
+    <p>\(T(n) = a*T(n/b) + Θ(n^d \log_{} ^e n)\)</p>
+    <p>\(a=2, b=2, d=0, e=0\)</p>
+    <p>\(n^d=1, \log_{} ^e n=1\)</p>
+    <p>\(\log_{b} a = 1\)</p>
+    <p>Como temos que o \(\log_{b} a > d\), então \(T(n)  ∈ Θ(n^{\log_{b} a})\), substituindo:</p>
+    <p>\(T(n)  ∈ Θ(n^{\log_{2} 2}) \), logo</p>
+    <p>\(T(n) ∈ Θ(n) \)</p>
+
+    <h3>Item F</h3>
+    <p><strong>Pseudocódigo: </strong></p>
+
+    // algoritmo recursivo mais eficiente
+
+    <pre><code>
+        Pré-condições: recebe como entrada dois inteiros b e n, 
+                       onde n≥0 e não temos b e n nulos simultaneamente.
+        Pós-condições: retorna o valor b^n.
+        
+        algoritmo potencia(b, n)
+            if (n == 0):      //caso base
+                return 1     //solução direta
+            if (n == 1):      //caso base
+                return b     //solução direta
+
+            if(n % 2 == 0):              // se n é par
+                I ← potencia(b, ⌊n/2⌋)    
+                S ← I * I
+                return S
+            else:                        // se n é ímpar
+                I ← potencia(b, ⌊n/2⌉) 
+                S ← I * I * b
+                return S
+    </pre></code>
+
+    <p><strong>Complexidade em função de \(n\): </strong></p>
+    <p>O algoritmo melhorado, faz uma chamada recursiva \(T(n/2)\), mais duas verificações,
+         que possuem tempo constante \(Θ(1)\).</p>
+    <p>\(\)</p>
+    <p>\(T(n) = T(n/2) + Θ(1)\)</p>
+    <p>\(T(n) = a*T(n/b) + f(n)\)</p>
+    <p>\(f(n) = Θ(n^d \log_{} ^e n)\)</p>
+    <p>\(T(n) = a*T(n/b) + Θ(n^d \log_{} ^e n)\)</p>
+    <p>\(a=1, b=2, d=0, e=0\)</p>
+    <p>\(n^d=1, \log_{} ^e n=1\)</p>
+    <p>\(\log_{b} a = 0\)</p>
+    <p>Como \(\log_{b} a = 0\) e \(e >- 1\), temos que:</p>
+    <p>\(T(n) ∈ Θ(f(n) * \log_{} n)\)</p>
+    <p>\(T(n) ∈ Θ(Θ(n^d \log_{}^e n)* \log_{} n)\)</p>
+    <p>\(T(n) ∈ Θ(Θ(1)* \log_{} n)\)</p>
+    <p>\(T(n) ∈ Θ(\log_{} n)\)</p>
+
+    <p>A complexidade do algoritmo é \(Θ(\log_{} n)\), esse algoritmo possui complexidade 
+        menor em relação ao algoritmo força bruta, pois \(Θ(\log_{} n)\) é menor que \(Θ(n)\).
+
+    </p>
+
+</body>
+</html>

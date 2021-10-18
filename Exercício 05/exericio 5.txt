@@ -1,0 +1,61 @@
+Então agora vamos ver o que aconte quando nnn é positivo. Vamos começar falando que quando você multiplica as potências de xxx, você soma os expoentes: x^a \cdot x^b = x^{a+b}x 
+a
+ ⋅x 
+b
+ =x 
+a+b
+ x, start superscript, a, end superscript, dot, x, start superscript, b, end superscript, equals, x, start superscript, a, plus, b, end superscript para qualquer base de xxx e qualquer expoente de aaa e bbb. Portanto, se nnn é positivo e par, então x^n = x^{n/2} \cdot x^{n/2}x 
+n
+ =x 
+n/2
+ ⋅x 
+n/2
+ x, start superscript, n, end superscript, equals, x, start superscript, n, slash, 2, end superscript, dot, x, start superscript, n, slash, 2, end superscript. Se você tivesse que calcular y = x^{n/2}y=x 
+n/2
+ y, equals, x, start superscript, n, slash, 2, end superscript recursivamente, então você poderia calcular x^nx 
+n
+ x, start superscript, n, end superscript as y \cdot yy⋅yy, dot, y. E se nnn for positivo e ímpar? Então x^n = x^{n-1} \cdot xx 
+n
+ =x 
+n−1
+ ⋅xx, start superscript, n, end superscript, equals, x, start superscript, n, minus, 1, end superscript, dot, x, e n-1n−1n, minus, 1 ou é 0 ou é positivo e par. Nós acabamos de ver como calcularpotências de xxx quando o expoente for 0 ou for positivo e par. Portanto, você poderia calcular x^{n-1}x 
+n−1
+ x, start superscript, n, minus, 1, end superscript recusivamente, e então usar esse resultado para calcular x^n = x^{n-1} \cdot xx 
+n
+ =x 
+n−1
+ ⋅xx, start superscript, n, end superscript, equals, x, start superscript, n, minus, 1, end superscript, dot, x.
+E quando nnn for negativo? Então x^n = 1 / x^{-n}x 
+n
+ =1/x 
+−n
+ x, start superscript, n, end superscript, equals, 1, slash, x, start superscript, minus, n, end superscript e o expoente -n−nminus, n é positivo uma vez que ele é negação de um número negativo. Então você pode calcular x^{-n}x 
+−n
+ x, start superscript, minus, n, end superscript recursivamente e tomar a sua recíproca.
+Colocamndo essas observações juntas, nós temos os seguintes algoritmos de calculos recursivos x^nx 
+n
+ x, start superscript, n, end superscript:
+O caso base é quando n = 0n=0n, equals, 0, e x^0 = 1x 
+0
+ =1x, start superscript, 0, end superscript, equals, 1.
+Se nnn é positivo e par, calcule recursivamente y = x^{n/2}y=x 
+n/2
+ y, equals, x, start superscript, n, slash, 2, end superscript, e então x^n = y \cdot yx 
+n
+ =y⋅yx, start superscript, n, end superscript, equals, y, dot, y. Note que você pode conseguir utilizar apenas uma chamada recursiva nesse caso, calculando x^{n/2}x 
+n/2
+ x, start superscript, n, slash, 2, end superscript apenas uma vez, e então você multiplica o resultado dessa chamada recursiva por ele mesmo.
+Se nnn é positivo e ímpar, calcule recusivamente x^{n-1}x 
+n−1
+ x, start superscript, n, minus, 1, end superscript, até que o expoente seja 0 ou positivo e par. Então, x^n = x^{n-1} \cdot xx 
+n
+ =x 
+n−1
+ ⋅xx, start superscript, n, end superscript, equals, x, start superscript, n, minus, 1, end superscript, dot, x.
+se nnn for negativo, calcule recursivamente x^{-n}x 
+−n
+ x, start superscript, minus, n, end superscript, até que o expoente se torne positivo. Então, x^n = 1 / x^{-n}x 
+n
+ =1/x 
+−n
+ x, start superscript, n, end superscript, equals, 1, slash, x, start superscript, minus, n, end superscript.

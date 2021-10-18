@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+    <!-- MATHJAX 3 (através da CDN) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MATHJAX 3 (salvo no computador) -->
+    <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+
+<body>
+
+    <h1>Questão 01</h1>
+    <h3>Item A</h3>
+    <p>A proposição certificado corresponde ao conjunto de vértices pertencentes ao grafo 
+        \(C\) que fazem parte do conjunto independente com pelo menos \(k\) vértices.</p>
+    <p>O verificador consiste em verificar se os elementos do conjunto de vértices do grafo 
+        \(C\), são elementos do grafo \(G\), ou seja, 
+        verificar se o tamanho do grafo \(C\) é pelo menos \(k\) tamanho. Com isso, para toda 
+        aresta \((u,v)\) \(∈\) ao grafo \(G\), deve ser verificado se o vértice \(u\) ou o 
+        vértice \(v\) pertencem ou não pertencem ao grafo \(C\) e para cada verificação 
+        se precisa percorrer todo o grafo \(G\), com isso, cada verificação pode ser 
+        feita em tempo polinomial de acordo com o tamanho do grafo \(G\).</p>
+        
+    <h3>Item B</h3>
+    <p>A transformação em 3-CNF-SAT é feita em tempo polinomial, pois só é preciso construir 
+        o grafo \(G\). E o número de vértices do mesmo é igual a quantidade de literais da 
+        formula \(\phi \). A quantidade de arestas definida em cada cláusula é no máximo 
+        a quantidade de literais na fórmula \(\phi\), e a quantidade de arestas que ligam 
+        os literais verdadeiros a sua negação é menor ou igual ao numero de literais de 
+        \(\phi\) ao quadrado. Desse modo temos que, para transformar fórmula \(3-SAT \phi \) 
+        em um grafo \(G\) é feito de forma polinomial sobre o tamanho de \(\phi\).</p>
+
+    <h3>Item C</h3>
+    <p>Como o grafo \(G\) tem um conjunto independente, ou seja o grafo \(C\). Seja 
+        \(v\) \(∈\) ao grafo \(C\) e um literal pertecente a \(\phi\) associado ao vértice \(v\). 
+        Seja o literal na forma \(x\), se o literal é verdadeiro, e  \(\bar{x}\) se o 
+        literal for falso.
+        Como o grafo \(C\) é um conjunto independente, não existe problema se tiver valores 
+        contraditórios para um literal, ja que vértices associados aos 
+        literais com negação (Não) possuem uma aresta entre si no grafo \(G\).
+        Como todos os vértices associados a literais de uma mesma cláusula estão ligados entre 
+        si, o grafo \(C\) não possui mais de um vértice associado a mesma cláusula.  
+        Como o tamanho o grafo \(C\) é igual a \(m\) tamanho, temos que a valoração definida 
+        satisfaz a todas as cláusula de \(\phi\).
+        Para cada cláusula de \(\phi\) podemos considerar apenas um literal verdadeiro nesta
+        valoração. Logo, Seja o grafo \(C\) o conjunto de vértices pertencentes ao grafo \(G\) 
+        associados a estes lietrais. Como o grafo \(C\) contém apenas um vértices associado
+        em cada cláusula, logo temos que, o tamanho do grafo \(C\) é igual a \(m\) tamanho.
+        E para cada par de vértices no grafo \(C\), não existe arestas entre eles em \(G\), logo \(C\) é um 
+        conjunto independente de \(G\), de tamanho \(m\).</p>
+
+
+</body>
+
+</html>

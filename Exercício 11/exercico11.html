@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+    <!-- MATHJAX 3 (através da CDN) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MATHJAX 3 (salvo no computador) -->
+    <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+
+<body>
+
+    <h1>Questão 01</h1>
+    <h3>Item A</h3>
+    <p>Qual o número de subinstâncias armazenadas na tabela de programação dinâmica?</p>
+
+    <p>São todas as subisntâncias que são passadas nas chamadas do backtrack recursivo</p>
+    <p>(sub_sol, sub_custo) = impressão_nítida(M,W,j)</p>
+
+    <p>A tabela de programação dinâmica, vai armazenar todas melhores soluções e os melhores 
+        custos naqueles momento da execução do algoritmo, sempre atualizando o custo para um
+        melhor se houver.
+    </p>
+
+    <p>Cada elemento da tabela armazena a solução ótima da subinstância e seu custo</p>
+    
+
+    <h3>Item B</h3>
+    <p>O preenchimento do caso base é feito quando M[j, n-1] <= W, 
+        ou seja quando o tamanho da linha da palavra é menor ou igual ao tamanho máximo da 
+        linha.</p>
+    <p>O retorno do agortimo para o caso é:</p>
+    <p>sub_custo[j] = 0</p>
+    <p>sub_solucao[j] = {}</p>
+
+    <h3>Item C</h3>
+    <p>Qual a ordem de preenchimento da tabela</p>
+
+    <p>A ordem de preenchimento da tabela é decrescente, ou seja da maior 
+        subinstância para a menor, ou seja de \(n\) até \(i\).
+        Na primeira linha e coluna, todas as células são prenchidas com zero e o 
+        restante de acordo com a solução da subinstância.</p>
+
+    <p>A maior subinstância preenchida na tabela é o resultado final da instância original.</p>
+
+    <h3>Item D</h3>
+
+    <p>Pseudocódigo</p>
+    <pre><code>
+        impressao_nitida(M[], W, i)
+            sub_custo[0...n] ← ∞
+            sub_solucao[0...n] 
+
+            for j de n até i faça
+                se (M[j, n-1] <= W) então
+                    sub_custo[j] = 0
+                    sub_solucao[j] = {}
+            for k de j+1 ate n faça
+                custo = (W - M[j, k-1]^2) + sub_custo[k]
+                se (custo < sub_custo[j]) então   
+                    sub_custo[j] = custo
+                    sub_solucao[j] = sub_solucao[k] U {k}
+            
+            retorne (sub_solucao[0], sub_solucao[0])
+
+    </code></pre>
+
+    <h3>Item E</h3>
+    <p>Complexidade:</p>
+
+    <p> Como o loop externo vai de \(n\) a \(i\) \(Θ(n)\) e o loop interno 
+        vai de \(j+1\) a \(n\) \(Θ(n)\), temos uma complexidade de tempo polinomial.</p>
+    <p>\(Θ(n) * Θ(n) = Θ(n^2)\)</p>
+    
+    <p>A complexidade do algoritmo é \(Θ(n^2)\)</p>
+
+
+</body>
+
+</html>

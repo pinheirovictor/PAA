@@ -1,0 +1,97 @@
+<h3>Item A</h3>
+    <p>Para o problema do elemento Majoritário, o algoritmo de divisão e conquista 
+        que fornece o elemento majoritário sempre que a lista \(L\) possui um majoritário.
+         Quando \(L\) não possui majoritário, o algoritmo pode retornar qualquer 
+         elemento. Ou seja, para confirmar se o elemento retornado é de fato 
+         majoritário precisaríamos ainda percorrer \(L\) para contar o número de 
+         ocorrências do elemento retornado.</p>
+
+    <p>Pseudocódigo</p>
+
+    <p>Entrada: Uma lista \(L[1..n]\)</p>
+    <p>Saída: Elemento Majoritário se houver</p>
+    
+
+    <pre><code>
+    canditado_majoritário(V[1...n], contador)
+        n ← tamanho de V[]
+        
+        se (n == 1) então
+            retorne V[0], contador + 1
+        
+        meio ← n/2
+        L_elemento, c1 ← canditado_majoritário(V[:meio], contador)
+        R_elemento, c2 ← canditado_majoritário(V[meio:], contador)
+        
+        se (L_elemento == 0 and R_elemento == 0) então
+            retorne 0
+        
+        se não se (L_elemento != 0 and R_elemento == 0) então
+            retorne L_elemento, c1 + 1
+        
+        se não se (L_elemento == 0 and R_elemento != 0) então
+            retorne R_elemento, c2 + 1
+        
+        se não se (L_elemento == R_elemento) então
+            retorne L_elemento, c1 + c2
+        
+        se não 
+            se (c1 > c2) então
+                retorne L_elemento, c1
+            
+            se não se (c1 < c2) então
+                retorne R_elemento, c2
+            
+            se não
+                retorne 0, contador
+    </pre></code>
+
+    <pre><code>
+    contador_elemento(V[1...n], elemento)
+        contador = 0
+        for i indo 0 até V[n] faça
+            if(i == elemento):
+                contador ← contador + 1
+        return contador
+    </code></pre>
+
+    <pre><code>
+    majoritario(V[1...n])
+        c_majoritario = canditado_majoritario(V[], 0)
+
+        freq = contador_elemento(V[], c_majoritario)
+    
+        se (freq > tamanho(V[])/2) então
+            retorne c_majoritario
+        
+        se não
+            retorne 0   
+    </code></pre>
+
+    <h3>Item B</h3>
+
+    <p>Explique como a etapa de conquista foi resolvida</p>
+
+    <p>Divisão: a Lista \(L[]\) foi dividida ao meio, separando os elementos da esquerda 
+        \(L_{elemento}\) e dos da direita \(R_{elemento}\). Compara os \(L_{elemento}\) com o 
+        \(R_{elemento}\) se forem iguais retorne qualquer um deles, se  \(L_{elemento}\) é 
+        diferente de zero e  \(R_{elemento}\) igual a zero retorne o  \(L_{elemento}\) e \(c1\), 
+        se caso o contrário respectivamente, retorne  o \(R_{elemento}\) e \(c2\) e por último se forem iguais
+    retorne qualquer um deles mais a soma de \(c1\) com \(c2\).</p>
+    
+    <p>Conquista: Uma chamada recursiva de tamanho \(<=\) \((n/2)\).</p>
+    <p>Combinação: </p>
+
+    <h3>Item C</h3>
+
+    <p>Complexidade:</p>
+    <p>\(T(n) = T(n/2) + θ(n)\)</p>
+
+    <p>Número de subproblemas recursivos = \(1\)</p>
+    <p>Tamanho de cada subproblema = \(n / 2\) [pior caso]</p>
+    <p>Tempo para todas as etapas não recursivas = \( θ (n)\)</p>
+    
+
+    <p>Logo temos que: \(T(n) = T (n/2) + θ(n) = T(n) = θ(n)\)</p>
+
+    <p>Logo o algoritmo possui tempo linear \( θ(n)\)</p>
