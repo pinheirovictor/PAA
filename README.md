@@ -1,2 +1,2 @@
 # PAA
-Projeto e Análise de Algoritmos
+Projeto e Análise de Algoritmos.
